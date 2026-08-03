@@ -32,7 +32,7 @@ The goal was not only to reproduce the geometry, but to design a feasible proces
 | Metric | Result |
 | --- | ---: |
 | Machining strategy | 3 setups |
-| Estimated total cycle time | 2,586 s — 43 min 06 s |
+| Estimated total cycle time | 2,586 s - 43 min 06 s |
 | Estimated throughput | ~1.4 parts/hour |
 | Main operation families | 6 |
 | Maximum spindle speed considered | 14,000 rpm |
@@ -53,14 +53,14 @@ The assigned configuration uses a `264 × 126 × 128 mm` stock, an annealed high
 
 ## Process-planning workflow
 
-1. **Interpret the drawings** — identify functional surfaces, datums, tolerances, roughness targets, and special requirements.
-2. **Create the CAD and stock models** — reproduce the assigned parametric geometry in Fusion 360.
-3. **Map features to operations** — select facing, peripheral milling, drilling, reaming, thread milling, and boring operations.
-4. **Build the precedence graph** — order operations according to datum creation, tolerance dependencies, and accessibility.
-5. **Define the setups** — choose workpiece orientations and clamping surfaces compatible with the four-axis machine and the assigned vise.
-6. **Select tools and cutting data** — use Sandvik Coromant catalogues to match tools, inserts, material, and operation requirements.
-7. **Verify feasibility** — check spindle speed, cutting power, engagement, surface finish, and machine limits.
-8. **Estimate productivity** — combine machining, tool-change, repositioning, and handling times into the final cycle estimate.
+1. **Interpret the drawings** - identify functional surfaces, datums, tolerances, roughness targets, and special requirements.
+2. **Create the CAD and stock models** - reproduce the assigned parametric geometry in Fusion 360.
+3. **Map features to operations** - select facing, peripheral milling, drilling, reaming, thread milling, and boring operations.
+4. **Build the precedence graph** - order operations according to datum creation, tolerance dependencies, and accessibility.
+5. **Define the setups** - choose workpiece orientations and clamping surfaces compatible with the four-axis machine and the assigned vise.
+6. **Select tools and cutting data** - use Sandvik Coromant catalogues to match tools, inserts, material, and operation requirements.
+7. **Verify feasibility** - check spindle speed, cutting power, engagement, surface finish, and machine limits.
+8. **Estimate productivity** - combine machining, tool-change, repositioning, and handling times into the final cycle estimate.
 
 ## Three-setup machining strategy
 
@@ -70,15 +70,15 @@ The assigned configuration uses a `264 × 126 × 128 mm` stock, an annealed high
   <img src="docs/images/setup-3.png" alt="Machining setup 3" width="32%">
 </p>
 
-### Setup 1 — datum and lower surfaces
+### Setup 1 - datum and lower surfaces
 
 The stock is clamped on its smaller lateral faces. This provides access to the bottom and lateral surfaces, establishes the bottom surface as Datum A, and machines Surface D as Datum B.
 
-### Setup 2 — top and inclined features
+### Setup 2 - top and inclined features
 
 The already machined shorter lateral surfaces are used for clamping. This orientation exposes the top, pocket, inclined surface, and related holes while preserving the spindle orientation required by the perpendicularity constraints.
 
-### Setup 3 — remaining external features
+### Setup 3 - remaining external features
 
 The final orientation exposes the remaining faces, curved surface, and chamfer. It completes the geometry while using previously machined surfaces as reliable clamping references.
 

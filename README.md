@@ -32,13 +32,13 @@ The goal was not only to reproduce the geometry, but to design a feasible proces
 | Metric | Result |
 | --- | ---: |
 | Machining strategy | 3 setups |
-| Estimated total cycle time | 2,586 s - 43 min 06 s |
-| Estimated throughput | ~1.4 parts/hour |
+| Estimated total cycle time | 2,586 s = 43 min 06 s |
+| Theoretical throughput | ~1.4 parts/hour |
 | Main operation families | 6 |
-| Maximum spindle speed considered | 14,000 rpm |
-| Available spindle power | 16 kW |
+| Peak calculated spindle speed | 13,793 rpm (14,000 rpm machine limit) |
+| Peak calculated cutting power | 15.85 kW (16 kW machine limit) |
 
-> The cycle time is a process-planning estimate that includes machining, tool changes, loading/unloading, and spindle repositioning.
+> These are analytical process-planning results based on the assigned machine constraints. The cycle time includes machining, tool changes, loading/unloading, and spindle repositioning. It does not include inspection, tool wear, machine availability, or unplanned downtime.
 
 ## Design and machining features
 
@@ -91,8 +91,8 @@ Each operation was checked before being included in the final sequence.
 | Check | Method |
 | --- | --- |
 | Tool suitability | Tool geometry and limits matched to the feature and workpiece material |
-| Spindle speed | Calculated from cutting speed and tool diameter, then checked against 14,000 rpm |
-| Cutting power | Worst-case engagement evaluated against the 16 kW spindle limit |
+| Spindle speed | Calculated from cutting speed and tool diameter, then checked against the assigned 14,000 rpm limit |
+| Cutting power | Worst-case analytical demand checked against the assigned 16 kW limit |
 | Feed rate | Derived from spindle speed, feed per tooth, and number of cutting edges |
 | Surface finish | Theoretical roughness compared with drawing requirements |
 | Productivity | Machining and non-cutting times included in the cycle-time estimate |
@@ -116,4 +116,4 @@ The complete report documents the selected Sandvik tool codes, cutting data, ass
 
 ## Notes
 
-This repository documents an academic manufacturing-process design project. The reported cycle time and throughput are analytical estimates derived from the planned sequence; they are not measurements from series production on a physical machine.
+This repository documents an academic manufacturing-process design project. The reported cycle time, throughput, spindle speed, and cutting power are analytical estimates derived from the planned sequence; they are not measurements from series production on a physical machine. Real implementation would require validation against the selected machine's power-torque curve, duty rating, tooling condition, fixturing, and safety margins.
